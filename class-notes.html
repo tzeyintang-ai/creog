@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Class Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --sidebar-bg: #ffffff;
+    --sidebar-text: #555555;
+    --sidebar-active: #111111;
+    --sidebar-hover: rgba(0,0,0,0.05);
+    --accent: #222222;
+    --accent2: #444444;
+    --text: #111111;
+    --muted: #666666;
+    --border: #e0e0e0;
+    --highlight: #ffe066;
+    --search-bg: #f5f5f5;
+    --tag-bg: #eeeeee;
+    --shadow: 0 4px 24px rgba(0,0,0,0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Dosis', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* ── TOP BAR ── */
+  header {
+    background: var(--sidebar-bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: 56px;
+    flex-shrink: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--sidebar-active);
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+
+  .brand-icon {
+    width: 28px; height: 28px;
+    background: var(--accent);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+  }
+
+  /* ── SEARCH BAR ── */
+  .search-wrap {
+    position: relative;
+    flex: 1;
+    max-width: 440px;
+    margin: 0 24px;
+  }
+
+  .search-wrap input {
+    width: 100%;
+    padding: 8px 40px 8px 36px;
+    border-radius: 8px;
+    border: 1.5px solid #dddddd;
+    background: #f5f5f5;
+    color: #111111;
+    font-family: 'Dosis', sans-serif;
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .search-wrap input::placeholder { color: #999999; }
+  .search-wrap input:focus {
+    border-color: #111111;
+    background: #eeeeee;
+  }
+
+  .search-icon {
+    position: absolute; left: 10px; top: 50%; transform: translateY(-50%);
+    color: #888888; font-size: 14px; pointer-events: none;
+  }
+
+  .search-clear {
+    position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+    background: none; border: none; color: #888888;
+    cursor: pointer; font-size: 16px; display: none; line-height: 1;
+    transition: color 0.2s;
+  }
+  .search-clear:hover { color: #111111; }
+
+  .search-stats {
+    color: #888888;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    font-family: 'DM Mono', monospace;
+    min-width: 90px;
+    text-align: right;
+  }
+
+  /* ── MAIN LAYOUT ── */
+  .main {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  /* ── SIDEBAR ── */
+  aside {
+    width: 260px;
+    flex-shrink: 0;
+    background: var(--sidebar-bg);
+    overflow-y: auto;
+    padding: 20px 0 20px;
+    border-right: 1px solid rgba(255,255,255,0.05);
+  }
+
+  aside::-webkit-scrollbar { width: 4px; }
+  aside::-webkit-scrollbar-track { background: transparent; }
+  aside::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 4px; }
+
+  .toc-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+    padding: 0 20px 10px;
+  }
+
+  .toc-section { margin-bottom: 6px; }
+
+  .toc-section-title {
+    display: flex; align-items: center;
+    padding: 7px 20px;
+    color: var(--sidebar-active);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    user-select: none;
+    gap: 8px;
+    transition: background 0.15s;
+    border-radius: 0;
+  }
+
+  .toc-section-title:hover { background: var(--sidebar-hover); }
+
+  .toc-section-title .chevron {
+    margin-left: auto;
+    font-size: 10px;
+    opacity: 0.5;
+    transition: transform 0.2s;
+  }
+
+  .toc-section.collapsed .chevron { transform: rotate(-90deg); }
+  .toc-section.collapsed .toc-items { display: none; }
+
+  .toc-items { padding: 2px 0; }
+
+  .toc-link {
+    display: block;
+    padding: 5px 20px 5px 36px;
+    color: var(--sidebar-text);
+    text-decoration: none;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    transition: all 0.15s;
+    border-left: 2px solid transparent;
+    opacity: 0.8;
+  }
+
+  .toc-link:hover {
+    color: #fff;
+    background: var(--sidebar-hover);
+    opacity: 1;
+  }
+
+  .toc-link.active {
+    color: var(--sidebar-active);
+    border-left-color: var(--accent);
+    background: var(--sidebar-hover);
+    opacity: 1;
+  }
+
+  .toc-link.hidden-toc { display: none; }
+
+  /* ── CONTENT PANEL ── */
+  .content-panel {
+    flex: 1;
+    overflow-y: auto;
+    padding: 48px 60px 80px;
+    background: var(--bg);
+  }
+
+  .content-panel::-webkit-scrollbar { width: 6px; }
+  .content-panel::-webkit-scrollbar-track { background: transparent; }
+  .content-panel::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+  /* ── SECTIONS ── */
+  .note-section {
+    max-width: 820px;
+    margin: 0 auto 64px;
+    animation: fadeUp 0.4s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: #eeeeee;
+    color: #333333;
+    padding: 3px 9px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .note-section h2 {
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+    line-height: 1.25;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 12px;
+  }
+
+  .note-section h3 {
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 28px 0 10px;
+  }
+
+  .note-section p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #111111;
+    margin-bottom: 14px;
+  }
+
+  .note-section ul, .note-section ol {
+    padding-left: 22px;
+    margin-bottom: 16px;
+  }
+
+  .note-section li {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: #111111;
+    margin-bottom: 4px;
+  }
+
+  .callout {
+    background: #f5f5f5;
+    border-left: 3px solid #333333;
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    margin: 20px 0;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #222222;
+  }
+
+  .callout strong { color: #111111; }
+
+  code {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85em;
+    background: #f0f0f0;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #333333;
+  }
+
+  pre {
+    background: var(--sidebar-bg);
+    color: #d4cfbe;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-x: auto;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.82rem;
+    line-height: 1.7;
+    margin: 18px 0;
+  }
+
+  pre code { background: none; padding: 0; color: inherit; font-size: inherit; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.88rem;
+  }
+
+  th {
+    background: var(--sidebar-bg);
+    color: var(--sidebar-active);
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.6;
+  }
+
+  tr:hover td { background: rgba(0,0,0,0.02); }
+
+  /* ── SEARCH HIGHLIGHT ── */
+  mark {
+    background: var(--highlight);
+    color: var(--text);
+    border-radius: 2px;
+    padding: 0 2px;
+  }
+
+  /* ── NO RESULTS ── */
+  .no-results {
+    display: none;
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--muted);
+  }
+
+  .no-results .icon { font-size: 3rem; margin-bottom: 16px; }
+  .no-results h3 { font-family: 'Lora', serif; font-size: 1.3rem; margin-bottom: 8px; color: var(--text); }
+  .no-results p { font-size: 0.9rem; }
+
+  .note-section.hidden-section { display: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <div class="brand-icon">📓</div>
+    My Class Notes
+  </div>
+
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="Search notes… (keywords, topics, definitions)" autocomplete="off" />
+    <button class="search-clear" id="searchClear" title="Clear search">✕</button>
+  </div>
+
+  <div class="search-stats" id="searchStats"></div>
+</header>
+
+<div class="main">
+
+  <!-- SIDEBAR / TABLE OF CONTENTS -->
+  <aside id="sidebar">
+    <div class="toc-label">Table of Contents</div>
+
+    <div class="toc-section" data-section="unit1">
+      <div class="toc-section-title" onclick="toggleSection(this)">
+        📘 Unit 1: Introduction
+        <span class="chevron">▾</span>
+      </div>
+      <div class="toc-items">
+        <a class="toc-link" href="#what-is-the-subject">What Is the Subject?</a>
+        <a class="toc-link" href="#key-terminology">Key Terminology</a>
+        <a class="toc-link" href="#overview-table">Overview Table</a>
+      </div>
+    </div>
+
+    <div class="toc-section" data-section="unit2">
+      <div class="toc-section-title" onclick="toggleSection(this)">
+        📗 Unit 2: Core Concepts
+        <span class="chevron">▾</span>
+      </div>
+      <div class="toc-items">
+        <a class="toc-link" href="#concept-a">Concept A</a>
+        <a class="toc-link" href="#concept-b">Concept B</a>
+        <a class="toc-link" href="#formulas">Formulas & Examples</a>
+      </div>
+    </div>
+
+    <div class="toc-section" data-section="unit3">
+      <div class="toc-section-title" onclick="toggleSection(this)">
+        📙 Unit 3: Advanced Topics
+        <span class="chevron">▾</span>
+      </div>
+      <div class="toc-items">
+        <a class="toc-link" href="#advanced-1">Topic 3.1</a>
+        <a class="toc-link" href="#advanced-2">Topic 3.2</a>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- CONTENT PANEL -->
+  <div class="content-panel" id="contentPanel">
+
+    <!-- NO RESULTS MESSAGE -->
+    <div class="no-results" id="noResults">
+      <div class="icon">🔍</div>
+      <h3>No results found</h3>
+      <p>Try a different keyword or check your spelling.</p>
+    </div>
+
+    <!-- ── UNIT 1 ── -->
+    <div class="note-section" id="section-unit1" data-unit="unit1">
+      <span class="section-badge">Unit 1</span>
+      <h2>Introduction</h2>
+    </div>
+
+    <div class="note-section" id="what-is-the-subject" data-unit="unit1">
+      <h3>What Is the Subject?</h3>
+      <p>
+        Replace this paragraph with your own notes. This is a <strong>sample study guide</strong> to
+        show you the layout. Each section scrolls smoothly and is searchable.
+      </p>
+      <div class="callout">
+        <strong>💡 Key Idea:</strong> Use the callout boxes for important definitions, theorems,
+        or anything you want to highlight for exam prep.
+      </div>
+      <p>
+        You can keep adding <code>&lt;div class="note-section"&gt;</code> blocks for every topic.
+        The search bar above will scan all visible text automatically.
+      </p>
+    </div>
+
+    <div class="note-section" id="key-terminology" data-unit="unit1">
+      <h3>Key Terminology</h3>
+      <ul>
+        <li><strong>Term A</strong> — Definition of term A goes here.</li>
+        <li><strong>Term B</strong> — Definition of term B goes here.</li>
+        <li><strong>Term C</strong> — Definition of term C goes here.</li>
+        <li><strong>Term D</strong> — Definition of term D goes here.</li>
+      </ul>
+    </div>
+
+    <div class="note-section" id="overview-table" data-unit="unit1">
+      <h3>Overview Table</h3>
+      <table>
+        <thead>
+          <tr><th>Concept</th><th>Description</th><th>Example</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Concept 1</td><td>Short description here.</td><td>Example value</td></tr>
+          <tr><td>Concept 2</td><td>Short description here.</td><td>Example value</td></tr>
+          <tr><td>Concept 3</td><td>Short description here.</td><td>Example value</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ── UNIT 2 ── -->
+    <div class="note-section" id="section-unit2" data-unit="unit2">
+      <span class="section-badge">Unit 2</span>
+      <h2>Core Concepts</h2>
+    </div>
+
+    <div class="note-section" id="concept-a" data-unit="unit2">
+      <h3>Concept A</h3>
+      <p>
+        Explain Concept A here. Add as much detail as you need. Use <strong>bold</strong> for
+        key phrases, <code>inline code</code> for technical terms, and callouts for important notes.
+      </p>
+      <div class="callout">
+        <strong>📌 Remember:</strong> This is where you'd put a formula, theorem, or rule
+        that's likely to appear on the exam.
+      </div>
+    </div>
+
+    <div class="note-section" id="concept-b" data-unit="unit2">
+      <h3>Concept B</h3>
+      <p>
+        Explain Concept B here. You can nest bullet points, add tables, or embed code blocks.
+      </p>
+      <ol>
+        <li>First step or point.</li>
+        <li>Second step or point.</li>
+        <li>Third step or point.</li>
+      </ol>
+    </div>
+
+    <div class="note-section" id="formulas" data-unit="unit2">
+      <h3>Formulas & Examples</h3>
+      <p>Use code blocks for equations or pseudocode:</p>
+      <pre><code>f(x) = x² + 2x + 1
+      = (x + 1)²
+
+# Quadratic formula
+x = (-b ± √(b² - 4ac)) / 2a</code></pre>
+    </div>
+
+    <!-- ── UNIT 3 ── -->
+    <div class="note-section" id="section-unit3" data-unit="unit3">
+      <span class="section-badge">Unit 3</span>
+      <h2>Advanced Topics</h2>
+    </div>
+
+    <div class="note-section" id="advanced-1" data-unit="unit3">
+      <h3>Topic 3.1</h3>
+      <p>Add your advanced notes here. The two-panel layout keeps the table of contents always
+      visible while you scroll through long content.</p>
+    </div>
+
+    <div class="note-section" id="advanced-2" data-unit="unit3">
+      <h3>Topic 3.2</h3>
+      <p>More advanced content here. Keep adding sections as your notes grow — just copy the
+      <code>note-section</code> block pattern and update the <code>id</code> and sidebar link.</p>
+      <div class="callout">
+        <strong>🎯 Exam Tip:</strong> Review all callout boxes the night before the exam for a
+        quick summary of the most important material.
+      </div>
+    </div>
+
+  </div><!-- end content-panel -->
+</div><!-- end main -->
+
+<script>
+// ── SEARCH ──────────────────────────────────────────────────────
+const searchInput  = document.getElementById('searchInput');
+const searchClear  = document.getElementById('searchClear');
+const searchStats  = document.getElementById('searchStats');
+const noResults    = document.getElementById('noResults');
+const allSections  = document.querySelectorAll('.note-section');
+const allTocLinks  = document.querySelectorAll('.toc-link');
+
+let originalHTML = {};
+allSections.forEach(s => { originalHTML[s.id] = s.innerHTML; });
+
+function escapeReg(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function highlightText(html, query) {
+  const re = new RegExp(`(${escapeReg(query)})`, 'gi');
+  return html.replace(re, '<mark>$1</mark>');
+}
+
+function stripTags(html) {
+  return html.replace(/<[^>]*>/g, ' ');
+}
+
+function doSearch() {
+  const q = searchInput.value.trim();
+
+  // Restore originals first
+  allSections.forEach(s => { s.innerHTML = originalHTML[s.id]; });
+  allTocLinks.forEach(l => l.classList.remove('hidden-toc'));
+  noResults.style.display = 'none';
+  searchClear.style.display = q ? 'block' : 'none';
+
+  if (!q) {
+    allSections.forEach(s => s.classList.remove('hidden-section'));
+    searchStats.textContent = '';
+    return;
+  }
+
+  let matchCount = 0;
+  let visibleSections = 0;
+
+  // Per-unit visibility tracking
+  const unitHasMatch = {};
+
+  allSections.forEach(section => {
+    const text = stripTags(section.innerHTML);
+    const re   = new RegExp(escapeReg(q), 'i');
+
+    if (re.test(text)) {
+      section.classList.remove('hidden-section');
+      const count = (text.match(new RegExp(escapeReg(q), 'gi')) || []).length;
+      matchCount += count;
+      visibleSections++;
+      // Highlight
+      section.innerHTML = highlightText(section.innerHTML, q);
+      // Track unit
+      const unit = section.dataset.unit;
+      if (unit) unitHasMatch[unit] = true;
+    } else {
+      section.classList.add('hidden-section');
+      const unit = section.dataset.unit;
+      // Don't mark unit as hidden yet — check all sections first
+    }
+  });
+
+  // Hide toc links whose sections are hidden
+  allTocLinks.forEach(link => {
+    const href = link.getAttribute('href').replace('#','');
+    const target = document.getElementById(href);
+    if (target && target.classList.contains('hidden-section')) {
+      link.classList.add('hidden-toc');
+    }
+  });
+
+  if (visibleSections === 0) {
+    noResults.style.display = 'block';
+    searchStats.textContent = 'No results';
+  } else {
+    searchStats.textContent = `${matchCount} match${matchCount !== 1 ? 'es' : ''}`;
+  }
+}
+
+searchInput.addEventListener('input', doSearch);
+searchClear.addEventListener('click', () => {
+  searchInput.value = '';
+  doSearch();
+  searchInput.focus();
+});
+
+// Keyboard shortcut: / to focus search
+document.addEventListener('keydown', e => {
+  if (e.key === '/' && document.activeElement !== searchInput) {
+    e.preventDefault();
+    searchInput.focus();
+    searchInput.select();
+  }
+  if (e.key === 'Escape') {
+    searchInput.value = '';
+    doSearch();
+  }
+});
+
+// ── TOC COLLAPSE ────────────────────────────────────────────────
+function toggleSection(titleEl) {
+  titleEl.closest('.toc-section').classList.toggle('collapsed');
+}
+
+// ── ACTIVE TOC LINK ON SCROLL ────────────────────────────────────
+const contentPanel = document.getElementById('contentPanel');
+const headings = contentPanel.querySelectorAll('[id]');
+
+function onScroll() {
+  let current = '';
+  headings.forEach(h => {
+    if (h.getBoundingClientRect().top < 120) current = h.id;
+  });
+  allTocLinks.forEach(l => {
+    l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+  });
+}
+
+contentPanel.addEventListener('scroll', onScroll, { passive: true });
+
+// Smooth scroll for toc links
+allTocLinks.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+</body>
+</html>
