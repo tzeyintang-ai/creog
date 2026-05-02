@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Class Notes</title>
+<title>TT PEDIA</title>
 <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
   :root {
@@ -260,6 +260,16 @@
     margin: 28px 0 10px;
   }
 
+  .note-section h4 {
+    font-family: 'Dosis', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin: 20px 0 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
   .note-section p {
     font-size: 0.95rem;
     line-height: 1.8;
@@ -279,6 +289,10 @@
     margin-bottom: 4px;
   }
 
+  .note-section ul ul, .note-section ol ol, .note-section ul ol, .note-section ol ul {
+    margin: 4px 0 4px;
+  }
+
   .callout {
     background: #f5f5f5;
     border-left: 3px solid #333333;
@@ -291,6 +305,16 @@
   }
 
   .callout strong { color: #111111; }
+
+  .callout.consensus {
+    background: #f0f7f1;
+    border-left-color: #4a8b5a;
+  }
+
+  .callout.key {
+    background: #fff8d6;
+    border-left-color: #d4a017;
+  }
 
   code {
     font-family: 'DM Mono', monospace;
@@ -331,6 +355,7 @@
     font-size: 0.78rem;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+    border-bottom: 2px solid var(--border);
   }
 
   td {
@@ -385,10 +410,10 @@
 <div class="main">
 
   <!-- SIDEBAR / TABLE OF CONTENTS -->
-    
+  <aside>
     <div class="toc-section" data-section="Gynecologic Oncology">
       <div class="toc-section-title" onclick="toggleSection(this)">
-        Gynecologic Oncology 
+        Gynecologic Oncology
         <span class="chevron">▾</span>
       </div>
       <div class="toc-items">
@@ -397,11 +422,10 @@
         <a class="toc-link" href="#Ovarian-Cancer">Ovarian Cancer</a>
         <a class="toc-link" href="#Vaginal-Cancer">Vaginal Cancer</a>
         <a class="toc-link" href="#Vulvar-Cancer">Vulvar Cancer</a>
-        <a class="toc-link" href="#Gestational Trophoblastic Neoplasia">Gestationl Trophoblastic Neoplasia</a>
-        <a class="toc-link" href="#Salame-Clinic">Surviving the Salame clinic</a>
+        <a class="toc-link" href="#Gestational-Trophoblastic-Neoplasia">Gestational Trophoblastic Neoplasia</a>
+        <a class="toc-link" href="#Salame-Clinic">Surviving the Salame Clinic</a>
       </div>
     </div>
-
   </aside>
 
   <!-- CONTENT PANEL -->
@@ -417,37 +441,791 @@
     <!-- ── Gynecologic Oncology ── -->
     <div class="note-section" id="section-unit2" data-unit="GynOnc">
       <span class="section-badge"> Gynecologic Oncology </span>
-      <h2> Gynecologic Oncology </h2>
     </div>
 
-    <div class="note-section" id="concept-a" data-unit="unit2">
-      <h3> Endometrial Cancer </h3>
-      <p>
-        Explain Concept A here. Add as much detail as you need. Use <strong>bold</strong> for
-        key phrases, <code>inline code</code> for technical terms, and callouts for important notes.
+    <!-- ── ENDOMETRIAL CANCER ── -->
+    <div class="note-section" id="Endometrial-Cancer" data-unit="unit2">
+      <h2>Endometrial Cancer</h2>
 
-        <li>The most common gynecologic cancer </li>
-        <li>Mean age of diagnosis 63</li>
-        <li>Most common stage @ diagnosis = stage 1</li>
-        <li>Most common presentation = AUB/PMB (90%)<li>
-        
-      </p>
-      <div class="callout">
-        <strong>📌 Remember:</strong> ***
+      <h4>Overview</h4>
+      <ul>
+        <li>The most common gynecologic cancer</li>
+        <li>Mean age of diagnosis: <strong>63 years</strong></li>
+        <li>Most common stage at diagnosis = <strong>Stage 1</strong></li>
+      </ul>
+
+            <div class="callout key">
+        <strong>📌 Key facts:</strong>
+        <ul style="margin-top: 6px; margin-bottom: 0;">
+          <li>Most commson presentation = <strong>AUB / PMB (90%)</strong></li>
+        </ul>
       </div>
+
+      <br>
+      <h4>Risk Factors for Type I Uterine Corpus Cancer</h4>
+<table>
+  <thead>
+    <tr>
+      <th>Factors Influencing Risk</th>
+      <th>Estimated Relative Risk</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Long-term use of unopposed estrogen</strong></td>
+      <td>10–20</td>
+    </tr>
+    <tr>
+      <td>Lynch syndrome</td>
+      <td>6–20</td>
+    </tr>
+    <tr>
+      <td>Estrogen-producing tumor</td>
+      <td>&gt; 5</td>
+    </tr>
+    <tr>
+      <td>Residency in North America or Northern Europe</td>
+      <td>3–18</td>
+    </tr>
+    <tr>
+      <td>Obesity</td>
+      <td>2–5</td>
+    </tr>
+    <tr>
+      <td>Nulliparity</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Older age</td>
+      <td>2–3</td>
+    </tr>
+    <tr>
+      <td>History of infertility</td>
+      <td>2–3</td>
+    </tr>
+    <tr>
+      <td>Tamoxifen use</td>
+      <td>2–3</td>
+    </tr>
+    <tr>
+      <td>Late age at natural menopause</td>
+      <td>2–3</td>
+    </tr>
+    <tr>
+      <td>White race</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Higher level of education or income</td>
+      <td>1.5–2</td>
+    </tr>
+    <tr>
+      <td>Early age at menarche</td>
+      <td>1.5–2</td>
+    </tr>
+    <tr>
+      <td>Menstrual irregularities</td>
+      <td>1.5</td>
+    </tr>
+    <tr>
+      <td>History of type 2 diabetes, hypertension, gallbladder disease, or thyroid disease</td>
+      <td>1.3–3</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<h4>Endometrial Precancer Classification</h4>
+      <p>There are 2 classification systems for endometrial premalignant lesions:</p>
+      <ul>
+        <li><strong>WHO94 schema (old) </strong> — based on glandular complexity and nuclear atypia</li>
+        <ul>
+            <li>Simple hyperplasia (1% progression to carcinoma)</li>
+            <li>Complex hyperplasia without atypia (3%) </li>
+            <li>Simple atypical hyperplasia (8%)</li>
+            <li>Complex atypical hyperplasia (29%)</li>
+        </ul>
+      </ul>
+      
+      <ul>
+      <li><strong>EIN diagnostic schema (more prognostic)</strong> - <strong> Here, clonality is the conceptual foundation</strong>; the EIN classification was built on the recognition that endometrial precancer arises through sequential accumulation of genetic damage in individual endometrial glands, creating monoclonoal expansions distinct from the polyclonal, diffuse proliferation seen in benign hyperplasia. </strong></li>  
+        <ul>    
+            <li><strong>Endometrial hyperplasia</strong>: Irregular, dilated glands. More diffusely distributed than disordered proliferative endometrium.</li>
+            <li><strong>EIN</strong>: Glandular crowding and complexity as well as altered cytology characterized by nuclear rounding, vesicular nuclei, small nucleoli, and squamous metaplasia that is distinct from the surrounding endometrium.</li>
+            <li><strong>Adenocarcinoma</strong>: when back-to-back gland formation measuring more than 2mm is seen histologically.</li>
+        </ul>
+      </ul>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>EIN / WHO94</th>
+            <th>Topography</th>
+            <th>Functional Category</th>
+            <th>Treatment</th>
+            <th>19-yr Risk to CA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Benign endometrial hyperplasia</td>
+            <td>Diffuse</td>
+            <td>Prolonged estrogen effect</td>
+            <td>Hormonal, symptomatic</td>
+            <td>1%</td>
+          </tr>
+          <tr>
+            <td>Complex hyperplasia without atypia</td>
+            <td>—</td>
+            <td>—</td>
+            <td>—</td>
+            <td>3%</td>
+          </tr>
+          <tr>
+            <td>EIN / atypical hyperplasia</td>
+            <td>Focal → diffuse</td>
+            <td>Precancerous</td>
+            <td>Hormonal or surgery</td>
+            <td>29%</td>
+          </tr>
+          <tr>
+            <td>Endometrial adenocarcinoma</td>
+            <td>Focal → diffuse</td>
+            <td>Malignant</td>
+            <td>Surgery</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <strong>Note:</strong> At the less severe end of the spectrum, there is also <strong>proliferative endometrium</strong> (focal irregular glands &lt;10%, only mildly dilated).
+      </div>
+
+      <br>
+      <h4>Indications for Endometrial Biopsy (EMB)</h4>
+      <ul>
+        <li>Sensitivity: <strong>90%</strong></li>
+        <li>Failure rate of detecting cancer: 1%</li>
+        <li><strong>AUB &lt; 45 yo:</strong>
+          <ul>
+            <li>Obese patients</li>
+            <li>Persistent AUB in setting of chronic ovulatory dysfunction, unopposed estrogen exposure, failed medical management, or high risk of endometrial cancer (Lynch, Cowden, etc.)</li>
+          </ul>
+        </li>
+        <li><strong>AUB age 45 to menopause:</strong>
+          <ul>
+            <li>Bleeding that is frequent (interval &lt; 21 days), heavy, or prolonged (lasting &gt; 8 days)</li>
+          </ul>
+        </li>
+        <li><strong>PMB</strong> (or &gt; 11 mm without bleeding)</li>
+        <li><strong>Abnormal cervical cytology</strong>
+          <ul>
+            <li>AGC-endometrial</li>
+            <li>35+ yo: AGC — all other subcategories</li>
+            <li>40+ yo: presence of benign-appearing endometrial cells with risk factors for endometrial cancer</li>
+          </ul>
+        </li>
+      </ul>
+
+            <div class="callout consensus">
+        <strong>✅ 2026 ACOG clinical practice update re: role of TVUS in PMB workup</strong>
+        <ul style="margin-top: 6px; margin-bottom: 0;">
+          <li>ACOG now recommends the use of both TVUS <strong>AND</strong> EMB for PMB workup--unless the patient meets all these criteria:</li>
+          <ul>
+            <li>Single episode of PMB</li>
+            <li>ET not thicker than 4mm on TVUS</li>
+            <li>No strong risk factors for endometrial cancer</li>
+            <li>Patient is counseled that continued or recurrent bleeding will require immediate re-evaluation</li>
+            <li>Patient has no significant healthcare barriers</li>
+            <li>BASICALLY NO ONE LOL</li>
+          </ul>
+          <li> This makes sense! Because 1) the prevalence of endometrial canceer has been climbing in recent years, the NPV of a threshold ET is expected to decrease as the cancer prevalence increases, and 2) some endometrial cancer don't come with thickened stripes aka serous type, which disproportionately impact Black women!</LI>
+        </ul>
+      </div>
+
+<br>
+      <h4>Benign Endometrial Hyperplasia</h4>
+      <ul>
+        <li>Histology: disordered, proliferative endometrium or focal glandular crowding, increased gland:stroma ratio</li>
+        <li>Prolonged anovulatory or estrogen effect <strong>without atypia</strong></li>
+      </ul>
+      <p><strong>Treatment for at least 3–6 months</strong></p>
+      <ul>
+        <li><strong>Provera 10mg QD</strong> — continuous dosing may be more effective than cyclic for reversing hyperplastic changes</li>
+        <li><strong>Megace 40mg QD</strong></li>
+        <li><strong>LNG 52mcg IUD</strong></li>
+        <li>Endometrial biopsy q6 months until resolution</li>
+        <li>Persistent disease → consider switching to the LNG IUD</li>
+        <li>Consider hysterectomy if refractory to medical management (month 9-12)</li>
+      </ul>
+
+<br>
+      <h4>Endometrial Intraepithelial Neoplasia / Atypical Hyperplasia (EIN/AEH)</h4>
+      <ul>
+        <li><a href="https://www.acog.org/clinical/clinical-guidance/clinical-consensus/articles/2023/09/management-of-endometrial-intraepithelial-neoplasia-or-atypical-endometrial-hyperplasia" target="_blank" rel="noopener">Reference clinical consensus #5</a></li>
+        <li><strong>40%</strong> have a concurrent endometrial carcinoma</li>
+        <li><strong>10%</strong> have a concurrent high-grade, deeply invasive uterine carcinoma</li>
+        <li>Histology: Irregularly sized or shaped glands, increased gland:stroma ratio with atypia, cytologic atypia with large round or elongated nuclei with high N:C ratio, loss of nuclear polarity, irregularly distribution of nuclei, mitotic activity variably increased</li>
+        <li><strong>Hysteroscopic sampling is the most accurate method</strong> for detecting concurrent carcinoma. Methods that yield crushed/very small/cauterized samples are not recommended due to artifacts</li>
+      </ul>
+
+      <p><strong>Treatment:</strong></p>
+      <ul>
+        <li><strong>Hysterectomy (definitive)</strong></li>
+        <li>If desires fertility preservation:
+          <ul>
+            <li><strong>Megace 160mg QD</strong> or <strong>Provera 20mg QD</strong> or <strong>LNG 52mcg IUD</strong></li>
+            <li>Initial response rate <strong>86%</strong>; complete resolution in <strong>66%</strong></li>
+            <li>IUD may have higher regression rate than oral therapy since there is no compliance issues</li>
+            <li>Oral progestin may also have more adverse effects: VTE and weight gain with long term use</li>
+            <li>IVF not associated with recurrence</li>
+            <li>EMB every 3-6 months until pathologic complete response, followed by continued sampling q6-12 months:
+              <ul>
+                <li><strong>Regression</strong> (hyperplasia without atypia) → continue sampling for 2 years</li>
+                <li><strong>Resolution</strong>: atrophic, secretory, or proliferative endometrium</li>
+                <li><strong>Persistence</strong>: consider 3–6 more months of therapy; if still ineffective → surgery</li>
+              </ul>
+            <li>If complete resolution has not occured by 12 months, hysterectomy should be strongly considered (prolog #26)</li>
+            <li>No trying for pregnancy until we get complete response!</li>
+            </li>
+          </ul>
+        </li>
+      </ul>
+<br>
+
+      <h4>Endometrial Cancer</h4>
+      <p><strong>Type 1 (Endometrioid)</strong> — endometrioid, mucinous, adenosquamous, secretory subtypes</p>
+      <ul>
+        <li>80% of endometrial carcinomas</li>
+        <li>Associated with <strong>unopposed estrogen</strong></li>
+        <li>Precancerous stage = EIN</li>
+        <li>Fun fact: Smoking decreases the risk of type 1 endometrial cancer</li>
+      </ul>
+
+      <p><strong>Type 2 (Non-endometrioid = bad)</strong> — serous, clear cell, carcinosarcoma</p>
+      <ul>
+        <li>Usually older age and more aggressive</li>
+        <li>Risk factors: Black race, smoker</li>
+        <li>More than 90% have <strong>p53 mutation</strong></li>
+        <li>Precancerous stage = Endometrial intraepithelial carcinoma (EIC)</li>
+        <li>25% chance of mets at the time of diagnosis</li>
+        <li>Will likely need chemoradiation</li>
+      </ul>
+
+      <p><strong>Tumor Grades </strong></p>
+      <p> In endometrial cancer, when we talking grades, we are referring to the proportion of solid area in the tumor.</p>
+      <ul>
+        <li><strong>Grade 1:</strong> ≤ 5%</li>
+        <li><strong>Grade 2:</strong> 6–50%</li>
+        <li><strong>Grade 3 (high grade):</strong> &gt; 50%</li>
+        <li>The presence of unusual nuclear atypia in an architecturally low-grade tumor should prompt evaluation of p53 and consideration of serous carcinoma</li>
+      </ul>
+
+      <p><strong>High-Risk Histopathological Criteria</strong></p>
+      <ul>
+        <li>Non-endometrioid histologic subtypes: serous, clear cell, carcinosarcoma, undifferentiated</li>
+        <li>Grade 3 (poorly differentiated)</li>
+        <li>Lymphovascular space invasion (LVSI)</li>
+        <li>Deep myometrial invasion (>50%)</li>
+        <li>Age 60 or above - consistently identified as an indepedent risk factor in PORTEC-1 and GOG99</li>
+      </ul>
+
+      <p>Molecular Classification</p>
+      <ul>
+        <li><strong>POLEmut:</strong> good prognosis</li>
+        <li><strong>MMRd</strong> or <strong>NSMP</strong> (non-specific molecular profile): intermediate</li>
+        <li><strong>p53abn:</strong> poor prognosis</li>
+      </ul>
+
+      <p>Special Histologic Features (buzzwords?)</p>
+      <ul>
+        <li><strong>Papillary serous carcinoma</strong>: Psammoma body (extracellular, round, laminar, dark eosinophilic collections of calcium)</li>
+      </ul>
+
+      <p>Tumor Marker</p>
+      <ul>
+        <li>The only useful one is <strong>CA-125</strong></li>
+        <li>Used in advanced disease or serous subtypes for treatment response monitoring or surveillance</li>
+      </ul>
+
+      <p>Pattern of Spread</p>
+      <ol>
+        <li><strong>Direct extension (most frequent)</strong></li>
+        <li>Lymphatic metastasis</li>
+        <li>Hematogenous dissemination</li>
+        <li>Intraperitoneal exfoliation</li>
+      </ol>
+<br>
+      <h4>Simplified FIGO Staging (2023)</h4>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:8%">Stage</th>
+            <th style="width:42%">Description</th>
+            <th style="width:50%">Treatment (for Type 1)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1</strong></td>
+            <td>
+              <strong>Confined to uterus</strong>
+              <ul style="margin-top: 4px;">
+                <li><strong>A</strong> — &lt; 50% myometrial invasion
+                  <ul>
+                    <li>A1 — no myometrial invasion</li>
+                    <li>A2 — &lt; 50%, nonaggressive</li>
+                    <li>A3 — &lt; 50%, nonaggressive, with ovarian involvement</li>
+                  </ul>
+                </li>
+                <li><strong>B</strong> — ≥ 50% myometrial invasion</li>
+                <li><strong>C</strong> — aggressive histologic type, no myometrial invasion</li>
+              </ul>
+            </td>
+            <td>
+              <strong>TLH BSO</strong>
+              <ul style="margin-top: 4px;">
+                <li>IA1 — Conservative treatment OK if patient desires fertility (MRI to rule out myometrial invasion → LNG-IUD/Progestin → endometrial sampling q3m)</li>
+                <li><strong>IA Grade 1-2</strong></li>
+                  <ul>
+                    <li>TLH BSO</li>
+                    <li>Vaginal brachytherapy if LVSI or age 60+</li>
+                  </ul>
+                  <li><strong>IA Grade 3</strong></li>
+                    <ul>
+                  <li> Vaginal brachytherapy preferred, but consider EBRT if either age 70 or LVSI</li>
+                  </ul>
+                  <li><strong>IB Grade 1-2</strong></li>
+                    <ul>
+                      <li>Vaginal brachytherapy preferred but consider EBRT if Grade 2 and age 60 and/or LVSI</li>
+                    </ul>
+                  <li><strong>IB Grade 3</strong>/li>
+                    <ul>
+                      <li> Chemoradiation with EBRT</li>
+                    </ul>
+                  </ul>
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>2</strong></td>
+            <td>
+              <strong>Cervix / LVSI</strong>
+              <ul style="margin-top: 4px;">
+                <li><strong>A</strong> — nonaggressive with cervical stroma</li>
+                <li><strong>B</strong> — nonaggressive, with substantial LVSI</li>
+                <li><strong>C</strong> — aggressive, with myometrial invasion</li>
+              </ul>
+            </td>
+            <td>EBRT and/or vaginal brachytherapy</td>
+          </tr>
+          <tr>
+            <td><strong>3</strong></td>
+            <td>
+              <strong>Vaginal/parametrial involvement; pelvic/para-aortic LN</strong>
+              <ul style="margin-top: 4px;">
+                <li><strong>A</strong> — serosa of uterine corpus / adnexa</li>
+                <li><strong>B</strong> — vaginal / parametrium</li>
+                <li><strong>C</strong> — pelvic / para-aortic lymph nodes</li>
+              </ul>
+            </td>
+            <td>Chemoradiation for advanced stage or recurrent disease</td>
+          </tr>
+          <tr>
+            <td><strong>4</strong></td>
+            <td>
+              <strong>Distant spread</strong>
+              <ul style="margin-top: 4px;">
+                <li><strong>A</strong> — bladder/bowel mucosa</li>
+                <li><strong>B</strong> — abdominal peritoneal mets beyond pelvis</li>
+                <li><strong>C</strong> — distant mets above renal vessels (lungs, liver, brain, bone)</li>
+              </ul>
+            </td>
+            <td>
+              <strong>Neoadjuvant chemotherapy</strong> to reduce tumor burden before cytoreductive surgery (debulking)
+              <ul style="margin-top: 4px;">
+                <li><strong>Carboplatin + paclitaxel:</strong> mainstay</li>
+                <li>Platinum/Taxel + <strong>Durvalumab</strong> - for stage III/IV dMMR tumors only</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        <strong>📌 Evalution for those who desires fertility-sparing treatment</strong>: we need to rule out advanced or high-risk disease
+        <ul style="margin-top: 6px; margin-bottom: 0;">
+          <li>Use <strong>D&amp;C instead of EMB</strong>: only 10% of cases diagnosed by D&amp;C were upgraded at hysterectomy vs. 26% by EMB</li>
+          <li>Get an <strong>MRI</strong> to measure myometrial invasion</li>
+        </ul>
+      </div>
+
+      <div class="callout">
+        <strong>📌 Selection criteria for conservative treatment of endometrial cancer:</strong>
+        <ul style="margin-top: 6px; margin-bottom: 0;">
+          <li>Stage 1A1 and grade 1 only</li>
+          <li>No contraindications for medical management</li>
+          <li>Strongly desires future fertility</li>
+          <li>Patient understands and accepts that data on cancer-related and pregnancy-related outcomes are limited</li>
+        </ul>
+      </div>
+
+      <div class="callout">
+        <strong>📌 Other pearls:</strong>
+        <ul style="margin-top: 6px; margin-bottom: 0;">
+          <li><strong>LNG-IUD and Megace PO</strong> have about <strong>70% effectiveness</strong>.</li>
+          <li><strong>Comprehensive surgical staging:</strong> remove uterus, cervix, adnexa, pelvic LN (distal common iliac, anterior and medial aspect of the external iliac down to the point at which the deep circumflex iliac vein crosses the external iliac artery, obturator fat pad), para-aortic LN, and pelvic washing.</li>
+        </ul>
+      </div>
+<br>
+      <h4>Treatment for Serous Carcinoma</h4>
+      <ul>
+        <li>Will likely need chemoradiation (EBRT ± vaginal brachytherapy) </li>
+        <li>Stage III and IV → HER2 testing recommended for advanced disease (may be eligible for trastuzumab; prolog #78) </li>
+      </ul>
+<br>
+      <h4>Surveillance</h4>
+      <ul>
+        <li>Q3 months × 2 years → Q6 months × 3 years → Annually</li>
+        <li>If suspecting disease recurrence → CT or PET/CT of chest and abdomen/pelvis</li>
+        <li>Estrogen therapy can be considered for those with menopausal symptoms
+          <ul>
+            <li>Similar recurrence rate between those taking HT vs. placebo</li>
+          </ul>
+        </li>
+      </ul>
     </div>
 
-    <div class="note-section" id="concept-b" data-unit="unit2">
-      <h3> Cervical Cancer </h3>
-      <p>
-        Will updatae later 
-      </p>
-      <ol>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-      </ol>
+
+
+    <!-- ── CERVICAL CANCER ── -->
+<div class="note-section" id="Cervical-Cancer" data-unit="unit2">
+<h2>Cervical Cancer</h2>
+
+    <h4>HPV &amp; Pathogenesis</h4>
+    <ul>
+      <li><strong>High-risk HPV types:</strong> 16, 18, 31, 33, 35, 39, 45, 51, 52, 56, 58, 59, 68</li>
+      <li>HPV <strong>16</strong> accounts for <strong>60%</strong> of all cases of cervical cancer worldwide</li>
+      <li>HPV <strong>18</strong> accounts for <strong>15%</strong> of cervical cancer</li>
+      <li><strong>E6</strong> acts on <strong>p53</strong>; <strong>E7</strong> acts on <strong>Rb</strong> → malignant transformation</li>
+      <li><strong>E2</strong> allows for tethering of viral genomes into chromosomes of host cells</li>
+      <li>Among HPV-infected women, current or former smoking increases the incidence of HSIL or invasive cervical cancer <strong>2–3 fold</strong></li>
+    </ul>
+<br>
+    <h4>HPV Vaccine</h4>
+    <ul>
+      <li>Protects against types <strong>6, 11, 16, 18, 31, 33, 45, 52, 58</strong></li>
+      <li>Prevents CIN 2+ and VIN 2+ disease</li>
+      <li><strong>Adjuvant HPV vaccination</strong> reduces the risk of new or persistent CIN2 by <strong>65%</strong> compared to surgical management alone. <a href="https://www.acog.org/clinical/clinical-guidance/practice-advisory/articles/2023/07/adjuvant-human-papillomavirus-vaccination-for-patients-undergoing-treatment-for-cervical-intraepithelial-neoplasia" target="_blank" rel="noopener">Click to see the ACOG Practice Advisory</a></li>
+    </ul>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Group</th>
+          <th>Schedule</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Age 9–14</td>
+          <td>2 doses (at 0, 6-12 months)<br><em>If less than 5 months apart → additional dose</em></td>
+        </tr>
+        <tr>
+          <td>Age 15+</td>
+          <td>
+            3 doses (at 0, 1–2, 6 months)
+            <ul style="margin-top: 4px; margin-bottom: 0;">
+              <li>At least 4 weeks between dose 1 and 2</li>
+              <li>At least 3 months between dose 2 and 3</li>
+              <li>At least 5 months between dose 1 and 3</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Pregnancy</td>
+          <td>Not recommended<br>No intervention needed if vaccinated while pregnant</td>
+        </tr>
+      </tbody>
+    </table>
+<br>
+    <h4>Cytology</h4>
+    <p><strong>LSIL</strong></p>
+    <ul>
+      <li>Cytomorphology: enlarged cells, binucleation, coarse chromatin, koilocytic changes (nuclear enlargement, hyperchromasia, and a clear space or halo around the nucleus aka perinuclear halo)</li>
+      <li><strong>Koilocytes</strong> are specific for LSIL</li>
+    </ul>
+    <p><strong>HSIL</strong></p>
+    <ul>
+      <li>Small immature cells with coarse chromatin, high nuclear-to-cytoplasmic ratio, and irregular nuclear borders</li>
+    </ul>
+    <p><strong>Invasive SCC</strong></p>
+    <ul>
+      <li>Large keratinized cells (specific for invasive SCC vs. CIN III)</li>
+      <li>Keratin pearls (specific for invasive SCC vs. CIN III)</li>
+      <li>Giant bizarre cells</li>
+      <li>Necrosis</li>
+      <li>Neovascularization (specific)</li>
+    </ul>
+<br>
+    <h4>Pap / HPV Scenarios (ASCCP 2019 Guideline)</h4>
+
+    <div class="callout">
+      <strong>📌 ***ADD SOMETHING LATER***
     </div>
+<br>
+    <h4>Cervical Cancer Screening in HIV and Autoimmune diseases</h4>
+    <ul>
+      <li>Start at age 21, then q1 year × 3 years if everything is normal</li>
+      <li>Age 30+: HPV cotesting q3y if everything normal — and you don't stop at age 65</li>
+      <li><strong>Screen indefinitely</strong> — never stop</li>
+    </ul>
+<br>
+    <h4>Excisional Procedure Scenarios</h4>
+    <ul>
+      <li>Negative margin and ECC → HPV cotesting at 6 months</li>
+      <li>CIN2+ at margin or ECC → HPV cotesting/colpo and EC / repeat excision / hysterectomy if precision is not feasible</li>
+      <li>Hysterectomy acceptable if: (1) repeat excision not feasible, or (2) persistent CIN2+</li>
+    </ul>
+
+    <h4>LEEP</h4>
+    <ul>
+      <li><strong>Complications:</strong> heavy bleeding the first 3 weeks, cervical stenosis and subsequent hematometra, preterm birth (PTB)</li>
+    </ul>
+
+    <h4>Cervical Cancer Histological Types</h4>
+    <ul>
+      <li><strong>Squamous cell:</strong> 70%</li>
+      <li><strong>Adenocarcinoma:</strong> 25%
+        <ul>
+          <li>Still most commonly caused by HPV 16, but <strong>18 is more associated with adenocarcinoma (AIS)</strong> — these lesions usually high in the endocervical canal and with skip lesions</li>
+          <li>The risk of residual disease is <strong>52%</strong> when margin is positive on the initial excisional procedure → will need to repeat CKC (do not wait)</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h4>Metastasis &amp; Staging</h4>
+    <ul>
+      <li><strong>Mets:</strong> via cervical lymphatic drainage</li>
+      <li><strong>Staged clinically</strong> (basic imaging and physical exam)
+        <ul>
+          <li>Cervical cancer is most common in low-resource countries and clinical staging is more accessible in those settings:
+            <ul>
+              <li>Pelvic exam under anesthesia</li>
+              <li>Cystoscopy</li>
+              <li>Proctoscopy</li>
+              <li>Hysteroscopy</li>
+              <li>CKC</li>
+              <li>Colpo with biopsy</li>
+              <li>CXR</li>
+              <li>IV pyelogram or CT</li>
+              <li>CT, MRI, PET scans</li>
+            </ul>
+          </li>
+          <li>Clinical staging avoids surgery in women with advanced disease, in whom primary chemoradiation is the preferred treatment</li>
+          <li>Advanced imaging and surgical sampling of lymph nodes recently added to the staging criteria → new <strong>Stage 3C</strong> category</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h4>Radiation Treatment</h4>
+    <ul>
+      <li>Cornerstone of advanced-stage cervical cancer management (<strong>2B+</strong>)</li>
+      <li><strong>External beam radiation:</strong> when a stream of electrons goes through a linear accelerator, it produces both photon and electron beams.
+        <ul>
+          <li><strong>Photon beam:</strong> causes single- and double-stranded breaks and DNA fragmentation. Affects oxygenated cells (those next to vascular areas, i.e. tumor cells) the most — they undergo cell death due to chemical intermediates. Associated with <strong>greater spread of energy</strong> and effects on neighboring tissue compared to proton beam. Associated with <strong>radiation-induced fibrosis</strong> (pentoxifylline and tocopherol/Vit E can be used for prevention and treatment).
+            <ul>
+              <li>Used to target deep internal organs</li>
+            </ul>
+          </li>
+          <li><strong>Proton beam therapy</strong> spares healthy neighboring tissue, leading to a decrease in radiation therapy–associated fibrosis</li>
+          <li><strong>Electron beam</strong> is used for superficial tissues — does not penetrate deeply into internal organs</li>
+        </ul>
+      </li>
+      <li><strong>Brachytherapy:</strong> uses gamma rays; cesium and iridium are commonly used. Smit sleeve and tandem and ovoids limit exposure to nearby tissues; cells in <strong>M phase</strong> are the most sensitive</li>
+    </ul>
+
+    <div class="callout">
+      <strong>📌 Radiation pearls:</strong>
+      <ul style="margin-top: 6px; margin-bottom: 0;">
+        <li>The <strong>terminal ileum</strong> is the most sensitive to radiation in cervical cancer due to its location and high proliferative rate of GI epithelium.</li>
+        <li><strong>Rectovaginal fistula:</strong> need to biopsy the fistula margins before performing repair.</li>
+        <li><strong>Radiation proctitis:</strong> may treat with sucralfate or glucocorticoid enemas.</li>
+      </ul>
+    </div>
+
+    <h4>Surveillance</h4>
+    <ul>
+      <li>Q3 months × 2 years → Q6 months × 3 years → annually</li>
+      <li>Pap annually × 20 years after treatment completion</li>
+    </ul>
+
+    <h4>Recurrence Risk</h4>
+    <ul>
+      <li><strong>High risk (50–70% recurrence within 5 years):</strong> positive nodes, positive surgical margin, microscopically positive parametria
+        <ul>
+          <li>Will need chemoradiation</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h4>Complications</h4>
+    <ul>
+      <li><strong>Radical surgery:</strong> ureteral stricture, vaginal fistula, bladder dysfunction, constipation, wound breakdown, lymphocyst, lymphoedema</li>
+      <li><strong>Radiation:</strong> dyspareunia, vaginal stenosis, late urinary/bowel complications such as fistula, enteritis, proctitis, bowel obstruction</li>
+    </ul>
+
+    <h4>Simplified Staging (FIGO 2018)</h4>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:8%">Stage</th>
+          <th style="width:30%">Description</th>
+          <th style="width:30%">Treatment</th>
+          <th style="width:32%">Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1</strong></td>
+          <td>
+            <strong>Limited to cervix</strong>
+            <ul style="margin-top: 4px;">
+              <li><strong>A</strong> &lt; 5mm invasion depth (<em>microinvasive</em>)
+                <ul>
+                  <li>A1 — ≤ 3 mm</li>
+                  <li>A2 — ≤ 5 mm</li>
+                </ul>
+              </li>
+              <li><strong>B</strong> &gt; 5 mm invasion depth
+                <ul>
+                  <li>B1 — stromal invasion &lt; 2 cm</li>
+                  <li>B2 — &lt; 4 cm</li>
+                  <li>B3 — ≥ 4 cm</li>
+                </ul>
+              </li>
+            </ul>
+          </td>
+          <td>
+            <ul style="margin-top: 0;">
+              <li><em>A1 with low-risk profile</em> (no LVSI, neg margin) — <strong>CKC or simple hysterectomy</strong></li>
+              <li><em>A1 + LVSI + pos margin</em> — <strong>radical hyst + LND</strong></li>
+              <li><em>IA2 to IB1, low-risk profile</em> (no LVSI, neg margin, SCC, Grade 1–2, invasion depth &lt; 1 cm, neg imaging) — <strong>modified radical hysterectomy + LND</strong>; CKC + LND for fertility preservation</li>
+              <li><em>IA2 to IB1, no low-risk profile</em> — <strong>radical trachelectomy or modified radical hyst (type B) + LND</strong></li>
+              <li><strong>B2</strong> — radical hyst + LND; trachelectomy + LND; chemoradiation (external beam + brachytherapy)</li>
+              <li><em>Surgery vs. chemoradiation</em> have same outcomes</li>
+              <li><strong>Starting from B3 → chemoradiation</strong></li>
+            </ul>
+          </td>
+          <td>
+            <strong>Stage 1A: 100% survival</strong>
+            <ul style="margin-top: 4px;">
+              <li>Dx of IA1/IA2 made on microscopic exam of a surgical specimen. If margin positive, FIGO allows IB1 staging, but technically should repeat cone to stage.</li>
+              <li>A1 (&lt; 3 mm): <strong>1%</strong> risk of parametrium or uterosacral nodes — OK to just cone (or simple hyst if completed childbearing)</li>
+              <li>A2 (&lt; 5 mm): <strong>7%</strong> risk of nodal mets — radical hyst or trachelectomy <strong>with LND</strong> recommended</li>
+              <li>Starting from 1A2 → need <strong>LN sampling</strong> to rule out nodal mets (if yes → chemo)</li>
+              <li>B1 (&lt; 2 cm): <strong>10%</strong> risk of nodal mets</li>
+              <li>Some offer trachelectomy up to IB2 (&lt; 4 cm). If tumor extends beyond internal os → trachelectomy contraindicated. Preop MRI/CT to evaluate parametria/extracervical disease.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td><strong>2</strong></td>
+          <td>
+            <strong>Beyond the uterus</strong>
+            <ul style="margin-top: 4px;">
+              <li>A1 — &lt; 4 cm</li>
+              <li>A2 — ≥ 4 cm</li>
+              <li><strong>Locally advanced disease</strong></li>
+              <li>B — parametrial invasion</li>
+            </ul>
+          </td>
+          <td>
+            <strong>Chemoradiation</strong><br>
+            2B+ not surgical candidate
+          </td>
+          <td>Radiation with concurrent chemosensitizing chemotherapy (e.g., cisplatin)</td>
+        </tr>
+        <tr>
+          <td><strong>3</strong></td>
+          <td>
+            <ul style="margin-top: 0;">
+              <li>A — lower ⅓ of the vagina</li>
+              <li>B — extending to pelvic wall ± hydronephrosis</li>
+              <li>C1 — pelvic node mets</li>
+              <li>C2 — para-aortic node mets</li>
+            </ul>
+          </td>
+          <td>Chemoradiation, or rarely pelvic exenteration</td>
+          <td>Pelvic exenteration usually used for locally recurrent disease in a previously radiated field (need PET-CT to confirm no disease outside the pelvis). For non-surgical candidates → cisplatin, paclitaxel, and bevacizumab.</td>
+        </tr>
+        <tr>
+          <td><strong>4</strong></td>
+          <td>
+            <strong>Beyond the pelvis</strong>
+            <ul style="margin-top: 4px;">
+              <li>A — bladder mucosa / rectum</li>
+              <li>B — distant organ</li>
+            </ul>
+          </td>
+          <td>
+            <ul style="margin-top: 0;">
+              <li>A — Chemoradiation</li>
+              <li>B — Palliative chemo / hospice</li>
+            </ul>
+          </td>
+          <td>
+            Chemo agents: cisplatin, paclitaxel, gemcitabine, topotecan, bevacizumab.<br><br>
+            <strong>KEYNOTE-28:</strong> Pembrolizumab (anti-PD1 checkpoint inhibitor) can be used for recurrent cervical cancer.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout key">
+      <strong>📌 Starting from 2A2, can only do chemoradiation.</strong>
+    </div>
+
+    <h4>Hysterectomy Types</h4>
+    <ul>
+      <li><strong>Simple (total) hysterectomy:</strong> preserve parametria, ligate uterine vessels at the uterine isthmus, transect uterosacral ligament at uterine insertion, preserve vagina</li>
+      <li><strong>Modified radical hysterectomy:</strong> remove parametria medial to ureter, ligate uterine vessel at the level of ureter, transect uterosacral ligament midway between uterus and rectum, remove 1–2 cm of vagina</li>
+      <li><strong>Pelvic exenteration:</strong> removal of uterus, ovaries, fallopian tubes, parametrium, uterine arteries, bladder, vagina, urethra, levator muscles, portions of the rectum — high morbidity and mortality. Most common long-term life-threatening complications: urinary obstruction → pyelo and urosepsis.</li>
+    </ul>
+
+    <div class="callout">
+      <strong>📌 Pelvic radiation</strong> can cause premature ovarian insufficiency. Can offer <strong>lateral ovarian transposition</strong> to preserve fertility (mobilize the IP ligament and transpose the ovaries to the paracolic gutters). Can also cause reduced uterine volume — may need surrogates. <strong>300 cGy</strong> will likely induce menopause.
+    </div>
+
+    <h4>Trials Summary</h4>
+    <div class="callout trial">
+      <strong>OUTBACK trial:</strong> adding <strong>adjuvant chemo</strong> after the completion of chemoradiation (with the goal of eliminating micrometastases that may exist outside the radiation field) <strong>did not provide any survival benefit</strong>.
+    </div>
+    <div class="callout trial">
+      <strong>KEYNOTE-18:</strong> Pembrolizumab good for advanced cervical cancer (Stage 3 and 4A).
+    </div>
+    <div class="callout trial">
+      <strong>LACC trial:</strong> MIS approach for radical hysterectomy has significantly lower disease-free survival and overall survival, and nearly <strong>4× recurrence risk</strong> compared to open (for IA1 with LVSI and IA2–IB2).
+    </div>
+
+    <h4>Uterine Sarcoma</h4>
+    <p><strong>2009 FIGO classification:</strong></p>
+    <ul>
+      <li>Leiomyosarcomas (30%)</li>
+      <li>Endometrial stromal sarcomas</li>
+      <li>Undifferentiated sarcoma</li>
+    </ul>
+
+  </div>
+
+</div>
+</body>
+</html>
+
+</div>
+</body>
+</html>
 
   </div><!-- end content-panel -->
 </div><!-- end main -->
@@ -494,8 +1272,6 @@ function doSearch() {
 
   let matchCount = 0;
   let visibleSections = 0;
-
-  // Per-unit visibility tracking
   const unitHasMatch = {};
 
   allSections.forEach(section => {
@@ -507,19 +1283,14 @@ function doSearch() {
       const count = (text.match(new RegExp(escapeReg(q), 'gi')) || []).length;
       matchCount += count;
       visibleSections++;
-      // Highlight
       section.innerHTML = highlightText(section.innerHTML, q);
-      // Track unit
       const unit = section.dataset.unit;
       if (unit) unitHasMatch[unit] = true;
     } else {
       section.classList.add('hidden-section');
-      const unit = section.dataset.unit;
-      // Don't mark unit as hidden yet — check all sections first
     }
   });
 
-  // Hide toc links whose sections are hidden
   allTocLinks.forEach(link => {
     const href = link.getAttribute('href').replace('#','');
     const target = document.getElementById(href);
